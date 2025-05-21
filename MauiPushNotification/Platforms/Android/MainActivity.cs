@@ -27,23 +27,23 @@ namespace MauiPushNotification
 
         private static void HandleIntent(Intent intent)
         {
-            //FirebaseCloudMessagingImplementation.OnNewIntent(intent);
+            FirebaseCloudMessagingImplementation.OnNewIntent(intent);
 
-            if (intent == null)
-            {
-                return;
-            }
+            //if (intent == null)
+            //{
+            //    return;
+            //}
 
-            var url = intent.Extras?.GetString("url");
-            if (string.IsNullOrWhiteSpace(url))
-            {
-                return;
-            }
+            //var url = intent.Extras?.GetString("url");
+            //if (string.IsNullOrWhiteSpace(url))
+            //{
+            //    return;
+            //}
 
-            if (Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out var uri))
-            {
-                Microsoft.Maui.Controls.Application.Current?.SendOnAppLinkRequestReceived(uri);
-            }
+            //if (Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out var uri))
+            //{
+            //    Microsoft.Maui.Controls.Application.Current?.SendOnAppLinkRequestReceived(uri);
+            //}
 
 
             ///* Handle the intent when the app is launched from a notification */
